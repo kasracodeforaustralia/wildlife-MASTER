@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="./public/css/styles.css" rel="stylesheet">
-  </head>
+   <% include partials/header.ejs %>
+
   <body>
     <h1>DELWP Header here!</h1>
     <h2>WILDLIFE HEADER</h2>
+    <% include partials/utilityBar.ejs %>
+    <div>
+      <strong> Home Page </strong>
+    </div>
+    <div class="form-group">
+      <form name="login" method="post">
+        <label for="usr">User Name:</label>
+        <input type="text" class="form-control" id="usr" placeholder="User Name...">
+        <label for="usr">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Password...">
+
+        <button type="button" class="btn btn-default">Sing In</button>
+
+      </form>
+    </div>
+
 
   </body>
 </html>

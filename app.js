@@ -1,10 +1,18 @@
-var http = require('http');
 
+var express = require('express');
 
-var server = http.createServer(function(req, res){
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('You will do it by God`s help');
+var app = express();
+app.set('view engine', 'ejs');
+app.use('/public/css', express.static('public/css'));
+
+app.get('/',function(req, res){
+  res.sendFile(__dirname + '/index.html');
+  console.log('home page is showing now!')
+});
+app.get('/register',function(req, res){
+  res.sendFile(__dirname + '/reg.html');
+  console.log('This is registration page!')
 });
 
-server.listen(3000,'127.0.0.1');
-console.log('server is listening');
+console.log('app is listening!');
+app.listen(3000);
